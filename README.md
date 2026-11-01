@@ -1,115 +1,124 @@
-# free-llm · 免费大模型 API 与中转站接入指南
+# ⚡ free-llm · 2026 免费大模型 API 与中转站实测指南
 
-> 精选稳定高可用的大模型 API 中转平台，支持 **Claude Code**、**Cursor**、**Codex** 等 AI 编程工具极速接入。涵盖 **gpt-6.1-sol**、**gpt-6-astra**、**claude-opus-5.5**、**deepseek-v4** 等最新旗舰模型，提供 **AgentRouter**、**AnyRouter**、**快跑 AI**、**VSLLM** 与 **COCO API** 注册通道、额度领取与客户端配置教程。
+> **写在前面**：用过 Claude Code、Cursor、Codex、Cline 的人都懂——官方按月扣费贵，深度写代码几小时就能烧完额度，动不动还要面对断流和限频。  
+> 这份指南汇总了我长期高频实测、目前最稳定、能**直接领免费体验额度**或**通过签到持续续命**的 5 家优质中转站。只要合理搭配，**日常写代码、做开发完全可以做到零成本白嫖或极低成本自由**。
 
-## 🚀 推荐平台注册直达
+## 🎯 懒人抄作业：一分钟选型路线
 
-- **[AgentRouter](https://agentrouter.org/register?aff=NktD)**：新注册送 $50，每日签到再领 $25。额度丰厚 · 每日签到续期 · 编程工具适配全面 → **[点击直达注册](https://agentrouter.org/register?aff=NktD)**
-- **[AnyRouter](https://anyrouter.top/register?aff=jPZg)**：注册即赠 $50 免费额度。专注 Claude Code · 速度快延迟低 · 稳定主力/备用 → **[点击直达注册](https://anyrouter.top/register?aff=jPZg)**
-- **[快跑 AI (kuaipao.ai)](https://kuaipao.ai/register?aff=Hc7F)**：超低倍率调用，专设 codex / codex_vip 编程分组。极低倍率 · 专用 Codex VIP 分组 · 全能视频与大模型 → **[点击直达注册](https://kuaipao.ai/register?aff=Hc7F)**
-- **[VSLLM](https://vsllm.cc/register?aff=QQam)**：每日签到领额度，全系列主流大模型支持。多模型覆盖 · 每日签到领额度 · GitHub 极速登录 → **[点击直达注册](https://vsllm.cc/register?aff=QQam)**
-- **[COCO API](https://api.cocoapi.top/sign-up?aff=8UPe)**：每日签到领额度，生图与多模态全家桶支持。企业级高可用 · 生图全家桶 · 每日签到领额度 → **[点击直达注册](https://api.cocoapi.top/sign-up?aff=8UPe)**
+如果你不知道该选哪个，直接按自己的场景对号入座：
 
-## 📊 平台核心特性横向对比
+| 你的核心场景 | 推荐首选 | 为什么这么配（实测体验） | 直达传送门 |
+|---|---|---|:---:|
+| **日常主力写代码 / Claude Code 重度用户** | **[AgentRouter](https://agentrouter.org/register?aff=NktD)** | 注册直接到账 **$50**，每天登录签到再领 **$25**。目前 `gpt-6.1-sol` 全天候不限量低倍率供应，写代码的额度根本用不完。 | [👉 立即领 $50 体验额度](https://agentrouter.org/register?aff=NktD) |
+| **追求 Claude 极致响应 / 双通道容灾** | **[AnyRouter](https://anyrouter.top/register?aff=jPZg)** | 专为 Claude 系列模型调优的高速线路，注册即赠 **$50**。跟 AgentRouter 一起配进终端做双活备份，彻底告别单点卡顿。 | [👉 立即领 $50 体验额度](https://anyrouter.top/register?aff=jPZg) |
+| **极致性价比 / 团队高并发 / 视频与全模型** | **[快跑 AI (kuaipao.ai)](https://kuaipao.ai/register?aff=Hc7F)** | 独家提供 **codex / codex_vip 专属分组（低至 0.35 倍甚至更低）**，更有 0.2 倍的 `gpt-6.1-terra` 与全套 Seedance 2.5/Sora-2 视频生成，国内直连极度稳定。 | [👉 立即开通低倍率通道](https://kuaipao.ai/register?aff=Hc7F) |
+| **多模型日常体验 / 尝鲜 Gemini 4 / 编程备用** | **[VSLLM](https://vsllm.cc/register?aff=QQam)** | GitHub 一键授权秒进，支持每日签到领额度，第一时间适配了 Gemini 4 和最新 Claude/GPT，适合做趁手的日常百宝箱。 | [👉 一键授权领体验额度](https://vsllm.cc/register?aff=QQam) |
+| **企业级高可用 / AI 生图与多模态创作** | **[COCO API](https://api.cocoapi.top/sign-up?aff=8UPe)** | 每日签到领额度，支持【Pro 企业版】高稳定性分组，更独家集成了生图与绘图全家桶，兼顾文本与视觉创作。 | [👉 立即注册领取体验金](https://api.cocoapi.top/sign-up?aff=8UPe) |
 
-| 平台 | 福利与优惠 | 主要模型 | 推荐适用场景 | 直达链接 |
-|---|---|---|---|---|
-| **[AgentRouter](https://agentrouter.org/register?aff=NktD)** | 新注册送 $50，每日签到再领 $25 | gpt-6.1-sol、gpt-6-astra、claude-opus-5.5、deepseek-v4 | 日常主力写代码、Claude Code、Cursor、白嫖每日签到续期 | [立即注册](https://agentrouter.org/register?aff=NktD) |
-| **[AnyRouter](https://anyrouter.top/register?aff=jPZg)** | 注册即赠 $50 免费额度 | claude-opus-5.5、claude-sonnet-5 系列编程模型 | 深度使用 Claude Code 的开发者、Linux.do 社区用户 | [立即注册](https://anyrouter.top/register?aff=jPZg) |
-| **[快跑 AI (kuaipao.ai)](https://kuaipao.ai/register?aff=Hc7F)** | 超低倍率调用，专设 codex / codex_vip 编程分组 | gpt-6.1-terra、gpt-6.1-sol、claude-opus-5.5、deepseek-v4-pro、Seedance 2.5 视频、Sora-2、Veo-3.1 | 高频开发、大通量代码生成、AI 视频/绘图创作者、高性价比长期使用 | [立即注册](https://kuaipao.ai/register?aff=Hc7F) |
-| **[VSLLM](https://vsllm.cc/register?aff=QQam)** | 每日签到领额度，全系列主流大模型支持 | gemini-4、gpt-6.1 系列、claude-opus-5.5、deepseek-v4 | 多模型日常体验、编程辅助、日常签到领福利 | [立即注册](https://vsllm.cc/register?aff=QQam) |
-| **[COCO API](https://api.cocoapi.top/sign-up?aff=8UPe)** | 每日签到领额度，生图与多模态全家桶支持 | Pro 企业版 GPT 分组、gemini-4-argon 特惠、claude-opus-5.5、生图全家桶 | 企业版稳定调用、多模态绘图创作、开发测试多分组调度 | [立即注册](https://api.cocoapi.top/sign-up?aff=8UPe) |
+💡 **老手经验建议**：建议把这 5 个平台的账号和额度一次性领全，在自己的本地配置里留好备用 `base_url`。多条线路备用，写代码永远不卡壳。
 
 ---
 
-## 🛠️ 详细介绍与特性
+## 📊 平台核心特性与福利一览
 
-### [AgentRouter](https://agentrouter.org/register?aff=NktD)
+| 平台 | 核心福利与政策 | 主力模型阵容 | 适用场景 | 快捷通道 |
+|---|---|---|---|---|
+| **[AgentRouter](https://agentrouter.org/register?aff=NktD)** | 新注册送 $50，每日签到再领 $25 | `gpt-6.1-sol、gpt-6-astra、claude-opus-5.5、deepseek-v4` | 日常主力写代码、Claude Code、Cursor、白嫖每日签到续期 | [点击直达](https://agentrouter.org/register?aff=NktD) |
+| **[AnyRouter](https://anyrouter.top/register?aff=jPZg)** | 注册即赠 $50 免费额度 | `claude-opus-5.5、claude-sonnet-5 系列编程模型` | 深度使用 Claude Code 的开发者、Linux.do 社区用户 | [点击直达](https://anyrouter.top/register?aff=jPZg) |
+| **[快跑 AI (kuaipao.ai)](https://kuaipao.ai/register?aff=Hc7F)** | 超低倍率调用，专设 codex / codex_vip 编程分组 | `gpt-6.1-terra、gpt-6.1-sol、claude-opus-5.5、deepseek-v4-pro、Seedance 2.5 视频、Sora-2、Veo-3.1` | 高频开发、大通量代码生成、AI 视频/绘图创作者、高性价比长期使用 | [点击直达](https://kuaipao.ai/register?aff=Hc7F) |
+| **[VSLLM](https://vsllm.cc/register?aff=QQam)** | 每日签到领额度，全系列主流大模型支持 | `gemini-4、gpt-6.1 系列、claude-opus-5.5、deepseek-v4` | 多模型日常体验、编程辅助、日常签到领福利 | [点击直达](https://vsllm.cc/register?aff=QQam) |
+| **[COCO API](https://api.cocoapi.top/sign-up?aff=8UPe)** | 每日签到领额度，生图与多模态全家桶支持 | `Pro 企业版 GPT 分组、gemini-4-argon 特惠、claude-opus-5.5、生图全家桶` | 企业版稳定调用、多模态绘图创作、开发测试多分组调度 | [点击直达](https://api.cocoapi.top/sign-up?aff=8UPe) |
+
+---
+
+## 🛠️ 5 大精选平台深度评测
+
+### 🔹 [AgentRouter](https://agentrouter.org/register?aff=NktD)
 
 - **官网直达**：https://agentrouter.org/register?aff=NktD
 - **特色定位**：额度丰厚 · 每日签到续期 · 编程工具适配全面
-- **福利政策**：新注册送 $50，每日签到再领 $25
-- **支持模型**：gpt-6.1-sol、gpt-6-astra、claude-opus-5.5、deepseek-v4
+- **福利政策**：**新注册送 $50，每日签到再领 $25**
+- **支持模型**：`gpt-6.1-sol、gpt-6-astra、claude-opus-5.5、deepseek-v4`
 - **注册方式**：GitHub 授权登录 / Linux.do 授权登录
-- **支持客户端**：Claude Code、Codex、Cursor、Cline、Roo Code、Openclaw、opencode、Windsurf、Cherry Studio
-- **接口地址**：
-  - Anthropic 兼容: `https://agentrouter.org`
-  - OpenAI 兼容: `https://agentrouter.org/v1`
+- **兼容客户端**：Claude Code、Codex、Cursor、Cline、Roo Code、Openclaw、opencode、Windsurf、Cherry Studio
+- **调用接口地址**：
+  - Anthropic 原生兼容: `https://agentrouter.org`
+  - OpenAI 格式兼容: `https://agentrouter.org/v1`
 
-**亮点特性**：
+**实测核心亮点**：
 - 新用户注册即赠送 $50 体验额度，无门槛直接使用
 - 每日登录签到赠送 $25 额度，长期日常开发使用不愁额度
 - 全面上线 gpt-6.1-sol（低倍率不限量）与 gpt-6-astra 全天候供应
 - 官方适配 Claude Code、Codex、Cursor、Cline、Roo Code 等主流编程代理
 - 同时提供 Anthropic 原生接口和 OpenAI 兼容接口，极速配置
 
-### [AnyRouter](https://anyrouter.top/register?aff=jPZg)
+### 🔹 [AnyRouter](https://anyrouter.top/register?aff=jPZg)
 
 - **官网直达**：https://anyrouter.top/register?aff=jPZg
 - **特色定位**：专注 Claude Code · 速度快延迟低 · 稳定主力/备用
-- **福利政策**：注册即赠 $50 免费额度
-- **支持模型**：claude-opus-5.5、claude-sonnet-5 系列编程模型
+- **福利政策**：**注册即赠 $50 免费额度**
+- **支持模型**：`claude-opus-5.5、claude-sonnet-5 系列编程模型`
 - **注册方式**：Linux.do 账号登录
-- **支持客户端**：Claude Code、OpenAI / Anthropic 兼容开发环境
-- **接口地址**：
-  - Anthropic 兼容: `https://anyrouter.top`
-  - OpenAI 兼容: `https://anyrouter.top/v1`
+- **兼容客户端**：Claude Code、OpenAI / Anthropic 兼容开发环境
+- **调用接口地址**：
+  - Anthropic 原生兼容: `https://anyrouter.top`
+  - OpenAI 格式兼容: `https://anyrouter.top/v1`
 
-**亮点特性**：
+**实测核心亮点**：
 - 专为 Claude Code 及 AI 编程打造，线路稳定低延迟
 - 新用户注册直接到账 $50 初始积分
 - 与 AgentRouter 互为备份，双通道配置彻底告别额度用尽焦虑
 
-### [快跑 AI (kuaipao.ai)](https://kuaipao.ai/register?aff=Hc7F)
+### 🔹 [快跑 AI (kuaipao.ai)](https://kuaipao.ai/register?aff=Hc7F)
 
 - **官网直达**：https://kuaipao.ai/register?aff=Hc7F
 - **特色定位**：极低倍率 · 专用 Codex VIP 分组 · 全能视频与大模型
-- **福利政策**：超低倍率调用，专设 codex / codex_vip 编程分组
-- **支持模型**：gpt-6.1-terra、gpt-6.1-sol、claude-opus-5.5、deepseek-v4-pro、Seedance 2.5 视频、Sora-2、Veo-3.1
+- **福利政策**：**超低倍率调用，专设 codex / codex_vip 编程分组**
+- **支持模型**：`gpt-6.1-terra、gpt-6.1-sol、claude-opus-5.5、deepseek-v4-pro、Seedance 2.5 视频、Sora-2、Veo-3.1`
 - **注册方式**：Linux.do 授权 / 账号密码注册 / Passkey 快捷登录
-- **支持客户端**：Claude Code、Cursor、Codex、Cline、NextChat、快跑画布（img.kuaipao.pro）等
-- **接口地址**：
-  - Anthropic 兼容: `https://kuaipao.ai`
-  - OpenAI 兼容: `https://kuaipao.ai/v1`
+- **兼容客户端**：Claude Code、Cursor、Codex、Cline、NextChat、快跑画布（img.kuaipao.pro）等
+- **调用接口地址**：
+  - Anthropic 原生兼容: `https://kuaipao.ai`
+  - OpenAI 格式兼容: `https://kuaipao.ai/v1`
 
-**亮点特性**：
+**实测核心亮点**：
 - 专设 codex / codex_vip 专属低倍率分组（低至 0.35 倍甚至更低），专为高强度编码优化
 - 首发上线 gpt-6.1-terra 低至 0.2 倍率，deepseek-v4 同步官网超低价
 - 模型库极全：从最新 Claude/GPT，到 Seedance 2.5/Sora-2 全套视频模型
 - 国内国外双线加速（kuaipao.pro / kuaipao.ai），直连超快响应，彻底告别连接断流
 - 支持账号密码直接注册与 Linux.do 登录，灵活便捷
 
-### [VSLLM](https://vsllm.cc/register?aff=QQam)
+### 🔹 [VSLLM](https://vsllm.cc/register?aff=QQam)
 
 - **官网直达**：https://vsllm.cc/register?aff=QQam
 - **特色定位**：多模型覆盖 · 每日签到领额度 · GitHub 极速登录
-- **福利政策**：每日签到领额度，全系列主流大模型支持
-- **支持模型**：gemini-4、gpt-6.1 系列、claude-opus-5.5、deepseek-v4
+- **福利政策**：**每日签到领额度，全系列主流大模型支持**
+- **支持模型**：`gemini-4、gpt-6.1 系列、claude-opus-5.5、deepseek-v4`
 - **注册方式**：GitHub 授权登录
-- **支持客户端**：Claude Code、Cursor、Cherry Studio、NextChat、Chatbox
-- **接口地址**：
-  - Anthropic 兼容: `https://vsllm.cc`
-  - OpenAI 兼容: `https://vsllm.cc/v1`
+- **兼容客户端**：Claude Code、Cursor、Cherry Studio、NextChat、Chatbox
+- **调用接口地址**：
+  - Anthropic 原生兼容: `https://vsllm.cc`
+  - OpenAI 格式兼容: `https://vsllm.cc/v1`
 
-**亮点特性**：
+**实测核心亮点**：
 - 支持每日登录签到免费领额度，轻松满足日常对话与轻量编程需求
 - 极速适配最新大模型，Gemini 4 与 Claude-Opus-5.5 同步上线
 - 支持 GitHub 一键快速授权登录，无繁琐注册流程
 - 标准 OpenAI / Anthropic 兼容协议，一键接入 Cursor、NextChat 等客户端
 
-### [COCO API](https://api.cocoapi.top/sign-up?aff=8UPe)
+### 🔹 [COCO API](https://api.cocoapi.top/sign-up?aff=8UPe)
 
 - **官网直达**：https://api.cocoapi.top/sign-up?aff=8UPe
 - **特色定位**：企业级高可用 · 生图全家桶 · 每日签到领额度
-- **福利政策**：每日签到领额度，生图与多模态全家桶支持
-- **支持模型**：Pro 企业版 GPT 分组、gemini-4-argon 特惠、claude-opus-5.5、生图全家桶
+- **福利政策**：**每日签到领额度，生图与多模态全家桶支持**
+- **支持模型**：`Pro 企业版 GPT 分组、gemini-4-argon 特惠、claude-opus-5.5、生图全家桶`
 - **注册方式**：GitHub 授权登录 / 账号密码注册
-- **支持客户端**：Cursor、NextChat、LobeChat、Cherry Studio、Midjourney 兼容绘图工具
-- **接口地址**：
-  - Anthropic 兼容: `https://api.cocoapi.top`
-  - OpenAI 兼容: `https://api.cocoapi.top/v1`
+- **兼容客户端**：Cursor、NextChat、LobeChat、Cherry Studio、Midjourney 兼容绘图工具
+- **调用接口地址**：
+  - Anthropic 原生兼容: `https://api.cocoapi.top`
+  - OpenAI 格式兼容: `https://api.cocoapi.top/v1`
 
-**亮点特性**：
+**实测核心亮点**：
 - 支持每日签到领取使用额度，体验无忧
 - 提供【Pro 企业版】高稳定性 GPT 分组与特惠 gemini-4-argon 分组，灵活选择
 - 独家支持 AI 生图全家桶与绘画模型，多模态创作利器
@@ -117,51 +126,51 @@
 
 ---
 
-## 💻 快速接入配置教程
+## 💻 30 秒无痛接入主流开发工具
 
-### 1. Claude Code 配置
+### 1. Claude Code 极速配置
 
-完美兼容 Anthropic 原生协议，终端设置环境变量后直接启动：
+所有平台均原生兼容 Anthropic 协议，直接在终端导出环境变量启动：
 
 ```bash
-# 使用 AgentRouter
+# 方案 A：使用 AgentRouter（日常首选主力，签到续费不断档）
 export ANTHROPIC_AUTH_TOKEN=sk-你的令牌
 export ANTHROPIC_BASE_URL=https://agentrouter.org
 claude
 
-# 或使用 AnyRouter
+# 方案 B：使用 AnyRouter（Claude 专用加速备用线）
 export ANTHROPIC_AUTH_TOKEN=sk-你的令牌
 export ANTHROPIC_BASE_URL=https://anyrouter.top
 claude
 
-# 或使用 快跑 AI
+# 方案 C：使用 快跑 AI（超低倍率大通量编码）
 export ANTHROPIC_AUTH_TOKEN=sk-你的令牌
 export ANTHROPIC_BASE_URL=https://kuaipao.ai
 claude
-
-# 或使用 VSLLM
-export ANTHROPIC_AUTH_TOKEN=sk-你的令牌
-export ANTHROPIC_BASE_URL=https://vsllm.cc
-claude
-
-# 或使用 COCO API
-export ANTHROPIC_AUTH_TOKEN=sk-你的令牌
-export ANTHROPIC_BASE_URL=https://api.cocoapi.top
-claude
 ```
 
-写入 `~/.bashrc` 或 `~/.zshrc` 可持久保存。
+**进阶技巧（双活切换函数）**：将以下代码贴入 `~/.bashrc` 或 `~/.zshrc`，随时一行命令秒切线路：
 
-### 2. OpenAI 兼容客户端（Cursor / Codex / Cherry Studio）
+```bash
+function ai-switch() {
+  case $1 in
+    agent) export ANTHROPIC_BASE_URL='https://agentrouter.org' && echo '已切换至 AgentRouter' ;;
+    any) export ANTHROPIC_BASE_URL='https://anyrouter.top' && echo '已切换至 AnyRouter' ;;
+    kuaipao) export ANTHROPIC_BASE_URL='https://kuaipao.ai' && echo '已切换至 快跑 AI' ;;
+  esac
+}
+```
 
-将 API Base URL 填写为对应服务商地址并加上 `/v1`：
-- AgentRouter: `https://agentrouter.org/v1` 
-- AnyRouter: `https://anyrouter.top/v1` 
-- 快跑 AI (kuaipao.ai): `https://kuaipao.ai/v1` （国内直连：`https://kuaipao.pro/v1`）
-- VSLLM: `https://vsllm.cc/v1` 
-- COCO API: `https://api.cocoapi.top/v1` 
+### 2. Cursor / Codex / Cherry Studio 接入（OpenAI 兼容）
 
-Python OpenAI SDK 示例：
+在客户端的 OpenAI 兼容设置中填入对应 API Base URL（注意带上 `/v1`）：
+- **AgentRouter**: `https://agentrouter.org/v1` 
+- **AnyRouter**: `https://anyrouter.top/v1` 
+- **快跑 AI (kuaipao.ai)**: `https://kuaipao.ai/v1` （国内直连：`https://kuaipao.pro/v1`）
+- **VSLLM**: `https://vsllm.cc/v1` 
+- **COCO API**: `https://api.cocoapi.top/v1` 
+
+Python OpenAI SDK 调用示例：
 
 ```python
 from openai import OpenAI
@@ -172,8 +181,8 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="gpt-6.1-sol",
-    messages=[{"role": "user", "content": "写一段 Python 代码"}],
+    model="gpt-6.1-sol",  # 可选 gpt-6.1-sol、gpt-6-astra、claude-opus-5.5、deepseek-v4
+    messages=[{"role": "user", "content": "写一段 Python 高性能异步处理代码"}],
 )
 print(response.choices[0].message.content)
 ```
@@ -182,7 +191,9 @@ print(response.choices[0].message.content)
 
 ## 🌐 厂商官方免费大模型额度汇总
 
-### 国内官方平台
+除了第三方社区中转站外，主流模型大厂官方也提供免费试用与长期额度，适合作为底座备选：
+
+### 国内主流官方平台
 
 | 厂商与平台 | 免费额度与政策 | 特性与建议 |
 |---|---|---|
@@ -195,7 +206,7 @@ print(response.choices[0].message.content)
 | [商汤日日新](https://platform.sensenova.cn) | 公测期间赠送滚动积分池 | OpenAI 兼容接口，支持通用与轻量代码模型 |
 | [美团 LongCat](https://longcat.chat/platform) | LongCat-2.5-Preview / 2.0 免费开放 | 支持 1M 超长上下文与 128K 输出 |
 
-### 海外官方平台
+### 海外主流官方平台
 
 | 厂商与平台 | 免费额度与政策 | 特性与建议 |
 |---|---|---|
@@ -211,6 +222,17 @@ print(response.choices[0].message.content)
 
 ---
 
+## ❓ 常见问题与避坑指南 (FAQ)
+
+1. **额度用完了怎么办？**  
+   AgentRouter、VSLLM、COCO API 均支持每日签到领取额度；建议 5 个平台都注册备用，一条额度用尽直接切换另一条，即可实现永续轮换。
+2. **为什么推荐多备几个平台？**  
+   中转站受上游模型配额与网络波动影响，偶尔会出现短暂维护或特定模型限量。保持 2~3 条备用线路，开发流程永不中断。
+3. **会泄露代码吗？**  
+   涉及极其核心的公司商业机密或密钥凭据，建议使用本地模型或官方直连；日常开源开发、通用逻辑编写使用中转站完全无忧。
+
+---
+
 ## 📄 协议与说明
 
-本项目旨在整理高可用大模型 API 资源与使用指引。内容持续更新，欢迎 Star 关注！
+本项目旨在整理高可用大模型 API 资源与使用指引。内容持续高频实测更新，欢迎 Star 关注！
