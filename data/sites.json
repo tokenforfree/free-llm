@@ -1,8 +1,9 @@
 {
   "meta": {
-    "title": "free-llm · 免费大模型 API 与中转站接入指南",
-    "description": "精选高可用、免费与高性价比的大模型 API 中转平台。原生支持 Claude Code、Cursor、Codex、Cline 等主流 AI 编程工具，涵盖 gpt-6.1-sol、gpt-6-astra、claude-opus-5.5、deepseek-v4 等最新旗舰模型，提供 AgentRouter、AnyRouter、快跑 AI、VSLLM、COCO API 注册入口、额度领取与快速配置指南。",
-    "keywords": "免费AI API, 免费大模型API, Claude Code 免费API, gpt-6.1-sol, gpt-6-astra, claude-opus-5.5, deepseek-v4, AgentRouter注册, AnyRouter注册, 快跑AI注册, kuaipao.ai, VSLLM注册, COCO API注册, OpenAI兼容中转站",
+    "title": "免费API · 免费Token · 2026 最新AI大模型免费公益站合集与接入指南",
+    "tagline": "大模型免费 API、免费 Token 领取与精选 AI 公益站汇总",
+    "description": "拒绝月费刺客！2026 实测好用的大模型免费 API、免费 Token 领取与 AI 编程公益站汇总。全面支持 Claude Code、Cursor、Codex、Cline 等工具，覆盖 gpt-6.1-sol、gpt-6-astra、claude-opus-5.5、deepseek-v4 等最新旗舰模型，提供 AgentRouter、AnyRouter、快跑 AI、CUN.AI、VSLLM、COCO API 专属福利通道、每日签到白嫖与一键接入教程。",
+    "keywords": "免费api, 免费token, 免费公益站, 大模型公益站, AI公益站, 免费AI API, 免费大模型API, Claude Code 免费API, gpt-6.1-sol, gpt-6-astra, claude-opus-5.5, deepseek-v4, AgentRouter注册, AnyRouter注册, 快跑AI注册, kuaipao.ai, CUN.AI注册, VSLLM注册, COCO API注册, 免费Claude API, OpenAI兼容中转站, 白嫖大模型",
     "verified": "2026-11-01",
     "canonical_host": "https://free-llm.github.io"
   },
@@ -10,77 +11,96 @@
     {
       "id": "agentrouter",
       "name": "AgentRouter",
-      "tagline": "额度丰厚 · 每日签到续期 · 编程工具适配全面",
+      "tagline": "写代码神级主力公益站 · 注册送 $50 Token · 签到续命 $25/天",
       "register_url": "https://agentrouter.org/register?aff=NktD",
       "api_base_anthropic": "https://agentrouter.org",
       "api_base_openai": "https://agentrouter.org/v1",
-      "bonus_summary": "新注册送 $50，每日签到再领 $25",
+      "bonus_summary": "新注册送 $50 免费 Token，每日签到再领 $25",
       "signup_methods": ["GitHub 授权登录", "Linux.do 授权登录"],
       "models": "gpt-6.1-sol、gpt-6-astra、claude-opus-5.5、deepseek-v4",
-      "best_for": "日常主力写代码、Claude Code、Cursor、白嫖每日签到续期",
+      "best_for": "日常高强度写代码、Claude Code 重度依赖、Cursor、永续签到白嫖免费 Token",
       "highlights": [
-        "新用户注册即赠送 $50 体验额度，无门槛直接使用",
-        "每日登录签到赠送 $25 额度，长期日常开发使用不愁额度",
-        "全面上线 gpt-6.1-sol（低倍率不限量）与 gpt-6-astra 全天候供应",
-        "官方适配 Claude Code、Codex、Cursor、Cline、Roo Code 等主流编程代理",
-        "同时提供 Anthropic 原生接口和 OpenAI 兼容接口，极速配置"
+        "新用户注册即赠送 $50 免费体验 Token，直接到账无门槛开跑",
+        "每天签到直接补 $25 免费额度，日常写代码基本等于终身免费",
+        "目前 gpt-6.1-sol（低倍率不限量）与 gpt-6-astra 全天候供应，续航无敌",
+        "官方深度适配 Claude Code、Codex、Cursor、Cline、Roo Code 等工具",
+        "Anthropic 原生接口与 OpenAI 兼容接口秒级切换，一行命令搞定"
       ],
       "supported_clients": "Claude Code、Codex、Cursor、Cline、Roo Code、Openclaw、opencode、Windsurf、Cherry Studio"
     },
     {
       "id": "anyrouter",
       "name": "AnyRouter",
-      "tagline": "专注 Claude Code · 速度快延迟低 · 稳定主力/备用",
+      "tagline": "专为 Claude 打造的公益站 · 极速响应 · 黄金双活容灾必备",
       "register_url": "https://anyrouter.top/register?aff=jPZg",
       "api_base_anthropic": "https://anyrouter.top",
       "api_base_openai": "https://anyrouter.top/v1",
-      "bonus_summary": "注册即赠 $50 免费额度",
+      "bonus_summary": "注册即送 $50 免费体验 Token 额度",
       "signup_methods": ["Linux.do 账号登录"],
       "models": "claude-opus-5.5、claude-sonnet-5 系列编程模型",
-      "best_for": "深度使用 Claude Code 的开发者、Linux.do 社区用户",
+      "best_for": "Claude 忠实拥趸、追求低延迟丝滑响应、双通道防断网容灾",
       "highlights": [
-        "专为 Claude Code 及 AI 编程打造，线路稳定低延迟",
-        "新用户注册直接到账 $50 初始积分",
-        "与 AgentRouter 互为备份，双通道配置彻底告别额度用尽焦虑"
+        "专为 Claude Code 工作流量身定制，延迟极低，吐字快如闪电",
+        "新用户注册直接到账 $50 初始免费 Token，诚意拉满",
+        "与 AgentRouter 搭配组成双活路由，主力备用无缝切换，单点故障直接拜拜"
       ],
       "supported_clients": "Claude Code、OpenAI / Anthropic 兼容开发环境"
     },
     {
       "id": "kuaipao",
       "name": "快跑 AI (kuaipao.ai)",
-      "tagline": "极低倍率 · 专用 Codex VIP 分组 · 全能视频与大模型",
+      "tagline": "价格屠夫公益中转 · Codex VIP 0.35 超低倍率 · 视频与对话全能",
       "register_url": "https://kuaipao.ai/register?aff=Hc7F",
       "api_base_anthropic": "https://kuaipao.ai",
       "api_base_openai": "https://kuaipao.ai/v1",
       "domestic_domain": "https://kuaipao.pro",
-      "bonus_summary": "超低倍率调用，专设 codex / codex_vip 编程分组",
+      "bonus_summary": "超低倍率调用，专设 codex / codex_vip 编程分组送免费 Token",
       "signup_methods": ["Linux.do 授权", "账号密码注册", "Passkey 快捷登录"],
       "models": "gpt-6.1-terra、gpt-6.1-sol、claude-opus-5.5、deepseek-v4-pro、Seedance 2.5 视频、Sora-2、Veo-3.1",
-      "best_for": "高频开发、大通量代码生成、AI 视频/绘图创作者、高性价比长期使用",
+      "best_for": "高频大通量代码生成、极致性价比极客、团队高并发、AI 视频/绘图创作者",
       "highlights": [
-        "专设 codex / codex_vip 专属低倍率分组（低至 0.35 倍甚至更低），专为高强度编码优化",
+        "独家推出 codex / codex_vip 专属低倍率分组（低至 0.35 倍甚至更低），写大项目成本直接打骨折",
         "首发上线 gpt-6.1-terra 低至 0.2 倍率，deepseek-v4 同步官网超低价",
-        "模型库极全：从最新 Claude/GPT，到 Seedance 2.5/Sora-2 全套视频模型",
-        "国内国外双线加速（kuaipao.pro / kuaipao.ai），直连超快响应，彻底告别连接断流",
-        "支持账号密码直接注册与 Linux.do 登录，灵活便捷"
+        "全网极罕见的全能模型库：从旗舰对话到 Seedance 2.5 / Sora-2 全套视频模型一网打尽",
+        "国内国外双线加速（kuaipao.pro / kuaipao.ai），直连超快响应，彻底告别海外网络断流",
+        "支持账号密码直接注册与 Linux.do 登录，免翻直连极其方便"
       ],
       "supported_clients": "Claude Code、Cursor、Codex、Cline、NextChat、快跑画布（img.kuaipao.pro）等"
     },
     {
+      "id": "cunai",
+      "name": "CUN.AI (寸光阴)",
+      "tagline": "老牌高可用公益站 · 稳定如磐石 · 会员并发权益 · 每日签到领 Token",
+      "register_url": "https://www.cun.ai/sign-up?aff=pQB6",
+      "api_base_anthropic": "https://www.cun.ai",
+      "api_base_openai": "https://www.cun.ai/v1",
+      "bonus_summary": "每日签到领免费 Token，独家会员高并发权益",
+      "signup_methods": ["账号密码注册", "GitHub 授权登录"],
+      "models": "gpt-6.1 系列、claude-opus-5.5、deepseek-v4、主流全模型",
+      "best_for": "企业级长期生产、多并发高可用业务、日常签到白嫖免费 Token",
+      "highlights": [
+        "经典老牌稳定运行，口碑极佳，生产环境首选的定海神针",
+        "支持每日登录签到免费领 Token 额度，日常应急或轻量调用完全免费",
+        "独家上线会员等级与并发权益挂钩体系，用得越多并发越高，特别适合重度开发",
+        "全模型全天候稳定在线，OpenAI / Anthropic 双协议无缝兼容"
+      ],
+      "supported_clients": "Claude Code、Cursor、NextChat、Cherry Studio、各类自动化脚本"
+    },
+    {
       "id": "vsllm",
       "name": "VSLLM",
-      "tagline": "多模型覆盖 · 每日签到领额度 · GitHub 极速登录",
+      "tagline": "尝鲜百宝箱公益站 · Gemini 4 首发 · GitHub 秒登 · 每日签到送 Token",
       "register_url": "https://vsllm.cc/register?aff=QQam",
       "api_base_anthropic": "https://vsllm.cc",
       "api_base_openai": "https://vsllm.cc/v1",
-      "bonus_summary": "每日签到领额度，全系列主流大模型支持",
+      "bonus_summary": "每日签到领免费 Token，首发尝鲜最新全系列大模型",
       "signup_methods": ["GitHub 授权登录"],
       "models": "gemini-4、gpt-6.1 系列、claude-opus-5.5、deepseek-v4",
-      "best_for": "多模型日常体验、编程辅助、日常签到领福利",
+      "best_for": "尝鲜前沿新模型、轻量日常问答辅助、随手签到领免费 Token 福利",
       "highlights": [
-        "支持每日登录签到免费领额度，轻松满足日常对话与轻量编程需求",
-        "极速适配最新大模型，Gemini 4 与 Claude-Opus-5.5 同步上线",
-        "支持 GitHub 一键快速授权登录，无繁琐注册流程",
+        "支持每日登录签到免费领 Token 额度，轻松满足日常对话与轻量编程需求",
+        "极速适配最新大模型，Gemini 4 与 Claude-Opus-5.5 同步上线，尝鲜快人一步",
+        "支持 GitHub 一键快速授权登录，无任何繁琐注册门槛",
         "标准 OpenAI / Anthropic 兼容协议，一键接入 Cursor、NextChat 等客户端"
       ],
       "supported_clients": "Claude Code、Cursor、Cherry Studio、NextChat、Chatbox"
@@ -88,18 +108,18 @@
     {
       "id": "cocoapi",
       "name": "COCO API",
-      "tagline": "企业级高可用 · 生图全家桶 · 每日签到领额度",
+      "tagline": "企业级高可用公益站 · 生图全家桶 · 每日签到领 Token",
       "register_url": "https://api.cocoapi.top/sign-up?aff=8UPe",
       "api_base_anthropic": "https://api.cocoapi.top",
       "api_base_openai": "https://api.cocoapi.top/v1",
-      "bonus_summary": "每日签到领额度，生图与多模态全家桶支持",
+      "bonus_summary": "每日签到领免费 Token，生图与多模态全家桶支持",
       "signup_methods": ["GitHub 授权登录", "账号密码注册"],
       "models": "Pro 企业版 GPT 分组、gemini-4-argon 特惠、claude-opus-5.5、生图全家桶",
       "best_for": "企业版稳定调用、多模态绘图创作、开发测试多分组调度",
       "highlights": [
-        "支持每日签到领取使用额度，体验无忧",
-        "提供【Pro 企业版】高稳定性 GPT 分组与特惠 gemini-4-argon 分组，灵活选择",
-        "独家支持 AI 生图全家桶与绘画模型，多模态创作利器",
+        "支持每日签到领取使用 Token 额度，日常体验零负担",
+        "提供【Pro 企业版】高稳定性 GPT 分组与特惠 gemini-4-argon 分组，弹性调度",
+        "独家支持 AI 生图全家桶与绘画模型，多模态图文创作一站搞定",
         "支持 GitHub 登录与直接注册，兼容多平台调用"
       ],
       "supported_clients": "Cursor、NextChat、LobeChat、Cherry Studio、Midjourney 兼容绘图工具"

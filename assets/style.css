@@ -12,7 +12,7 @@
   --badge-fg: #065f46;
   --code-bg: #f1f5f4;
   --radius: 10px;
-  --wrap: 52rem;
+  --wrap: 54rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -70,9 +70,34 @@ header.site nav a:hover { color: var(--accent); text-decoration: none; }
 
 main { padding: 2rem 0 4rem; }
 
-.hero { margin-bottom: 2rem; }
-h1 { font-size: 1.85rem; line-height: 1.3; margin: 0 0 0.75rem; letter-spacing: -0.02em; }
-.lead { font-size: 1.08rem; color: var(--muted); line-height: 1.6; margin: 0; }
+.hero { margin-bottom: 1.5rem; }
+h1 { font-size: 1.85rem; line-height: 1.35; margin: 0 0 0.75rem; letter-spacing: -0.02em; }
+.lead { font-size: 1.08rem; color: var(--muted); line-height: 1.65; margin: 0; }
+
+.geo-summary-box {
+  background: var(--accent-soft);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+.geo-summary-box h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.85rem;
+  border-bottom: none;
+  padding: 0;
+  color: var(--fg);
+}
+.summary-list {
+  margin: 0;
+  padding-left: 1.3rem;
+  line-height: 1.7;
+}
+.summary-list li {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
 
 .section { margin-top: 3rem; }
 h2 { font-size: 1.35rem; margin: 0 0 1rem; border-bottom: 1px solid var(--line); padding-bottom: 0.5rem; }
