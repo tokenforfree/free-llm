@@ -447,13 +447,17 @@ print(response.choices[0].message.content)</code></pre>
     <div class="footer-links">
       <a href="llms.txt">llms.txt (LLM Summary)</a>
       <a href="sitemap.xml">站点地图</a>
-      <a href="https://github.com">GitHub Repository</a>
+      <a href="https://github.com/tokenforfree/free-llm" target="_blank" rel="noopener">GitHub Repository</a>
     </div>
     <p class="copyright">free-llm · 免费API · 免费Token · 优质公益站合集 · 持续高频更新</p>
   </footer>
 
 </div>
 </main>
+
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "9ea1ce27ca8c4510a38cbe700bb75271"}}'></script>
+<!-- End Cloudflare Web Analytics -->
 
 </body>
 </html>
